@@ -23,7 +23,7 @@
 
   <distributionManagement>
     <snapshotRepository>
-      <id>nexusRepo</id>
+      <id>Repository</id>
       <url>http://54.152.202.106:8081/repository/proj2-snapshot/</url>
     </snapshotRepository>
     <repository>
