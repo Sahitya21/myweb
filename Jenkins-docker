@@ -40,9 +40,9 @@ pipeline{
             }
         stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t sahitya2/dev-3 .'
+                 sh 'docker build -t sahitya2/proj-1 .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name sahitya2 -p 515:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name sahitya2 -p 815:8080 tomcat:${BUILD_NUMBER}'
              }
          }
         stage('Push Docker Image'){
