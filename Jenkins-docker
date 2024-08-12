@@ -40,7 +40,7 @@ pipeline{
             }
         stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t sahitya2/proj-1 .'
+                 sh 'docker build -t sahitya2/myweb .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
                  sh 'docker run -itd --name Aaravi1 -p 810:8080 tomcat:${BUILD_NUMBER}'
              }
@@ -50,7 +50,7 @@ pipeline{
                   withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
                       sh "docker login -u sahitya2 -p ${DOCKER_HUB_CREDENTIALS}"
             }
-            sh 'docker push sahitya2/dev-1'
+            sh 'docker push sahitya2/myweb'
         }
       }
         
